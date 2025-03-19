@@ -24,5 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "EffectiveAndroidContest"
 include(":app")
-include(":core-logic")
-include(":dataproviderapp")
