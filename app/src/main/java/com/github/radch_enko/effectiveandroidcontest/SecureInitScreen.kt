@@ -28,8 +28,9 @@ fun SecureInitScreen() {
             color = primary,
         )
         Spacer(Modifier.height(32.dp))
+
         Text(
-            text = "Инициализировать ContestApplication с ключом безопасности",
+            text = "Инициализировать ContestApplication с ключом безопасности. Инструмент для генерации придется поискать",
             style = MaterialTheme.typography.headlineSmall,
             textAlign = TextAlign.Center,
             color = Color.White
