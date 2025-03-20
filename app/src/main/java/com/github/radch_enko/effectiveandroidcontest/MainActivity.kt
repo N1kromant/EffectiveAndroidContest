@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import com.github.radch_enko.effectiveandroidcontest.core.gray
 import com.github.radch_enko.effectiveandroidcontest.navigation.Root
 import com.github.radch_enko.effectiveandroidcontest.ui.theme.EffectiveAndroidContestTheme
 
@@ -19,7 +20,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             EffectiveAndroidContestTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    containerColor = gray,
+                ) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) {
                         Root()
                     }

@@ -1,6 +1,5 @@
 package com.github.radch_enko.effectiveandroidcontest.navigation
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -10,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.github.radch_enko.effectiveandroidcontest.LaggyListScreen
+import com.github.radch_enko.effectiveandroidcontest.SecureInitScreen
 import com.github.radch_enko.effectiveandroidcontest.StoneScissorsPaperScreen
 import com.github.radch_enko.effectiveandroidcontest.core.StorageFactory
 import com.github.radch_enko.effectiveandroidcontest.core.steps.AuthorizationFormStep
@@ -29,9 +29,7 @@ fun Root() {
         startDestination = if (!storage.isSuccessSecretInit) NavScreen.Initial else NavScreen.Login
     ) {
         composable<NavScreen.Initial> {
-            Text(
-                text = "Задача: \nИнициализировать ContestApplication с ключом безопасности",
-            )
+            SecureInitScreen()
         }
         composable<NavScreen.Login> {
             val localContext = LocalContext.current
