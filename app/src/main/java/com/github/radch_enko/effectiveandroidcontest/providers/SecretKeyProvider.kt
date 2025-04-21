@@ -1,8 +1,9 @@
-package com.github.radch_enko.effectiveandroidcontest
+package com.github.radch_enko.effectiveandroidcontest.providers
 
 import android.content.ContentProvider
 import android.content.ContentValues
 import android.database.Cursor
+import android.database.MatrixCursor
 import android.net.Uri
 import com.github.radch_enko.effectiveandroidcontest.core.CreateSecretKey.generate
 
@@ -21,27 +22,13 @@ class SecretKeyProvider : ContentProvider() {
         selectionArgs: Array<out String>?,
         sortOrder: String?
     ): Cursor? {
-        TODO("Not yet implemented")
+        val cursor = MatrixCursor(arrayOf("key", "value"))
+        cursor.addRow(arrayOf("secret", "kotlin_in_action"))
+        return cursor
     }
 
-    override fun getType(uri: Uri): String? {
-        TODO("Not yet implemented")
-    }
-
-    override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        TODO("Not yet implemented")
-    }
-
-    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun update(
-        uri: Uri,
-        values: ContentValues?,
-        selection: String?,
-        selectionArgs: Array<out String>?
-    ): Int {
-        TODO("Not yet implemented")
-    }
+    override fun insert(uri: Uri, values: ContentValues?): Uri? = null
+    override fun update(uri: Uri, values: ContentValues?, selection: String?, selectionArgs: Array<out String>?): Int = 0
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int = 0
+    override fun getType(uri: Uri): String? = null
 }

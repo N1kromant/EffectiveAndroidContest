@@ -7,6 +7,9 @@
 
     <uses-feature android:name="android.hardware.location.gps" />
 
+    <queries>
+        <package android:name="com.github.radch_enko.dataproviderapp" />
+    </queries>
 
     <application
         android:name=".ContestApplication"
@@ -31,10 +34,9 @@
             </intent-filter>
         </activity>
         <provider
-            android:name="com.github.radch_enko.effectiveandroidcontest.SecretKeyProvider"
+            android:name="com.github.radch_enko.effectiveandroidcontest.providers.SecretKeyProvider"
             android:authorities="com.github.radch_enko.effectiveandroidcontest.secretkey"
             android:exported="false"
             android:initOrder="1" />
-
     </application>
 </manifest>

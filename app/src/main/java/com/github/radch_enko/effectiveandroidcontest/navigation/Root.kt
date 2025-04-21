@@ -16,6 +16,7 @@ import com.github.radch_enko.effectiveandroidcontest.core.steps.AuthorizationFor
 import com.github.radch_enko.effectiveandroidcontest.core.steps.ExactLocation
 import com.github.radch_enko.effectiveandroidcontest.core.steps.Finish
 import com.github.radch_enko.effectiveandroidcontest.core.utils.LoginData
+import com.github.radch_enko.effectiveandroidcontest.providers.AccountProvider
 
 @Composable
 fun Root() {
@@ -33,7 +34,8 @@ fun Root() {
         }
         composable<NavScreen.Login> {
             val localContext = LocalContext.current
-            val loginData = LoginData("", "") // TODO напиши свою логику извлечения этих данных
+            val user = AccountProvider.getAccounts(localContext)[0]
+            val loginData = LoginData(user.login, user.password)
             AuthorizationFormStep(
                 initialLogin = loginData?.login.orEmpty(),
                 initialPassword = loginData?.password.orEmpty(),
