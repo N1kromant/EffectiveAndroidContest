@@ -5,13 +5,14 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.MatrixCursor
 import android.net.Uri
+import androidx.compose.ui.res.stringResource
+import com.github.radch_enko.effectiveandroidcontest.R
 import com.github.radch_enko.effectiveandroidcontest.core.CreateSecretKey.generate
 
 class SecretKeyProvider : ContentProvider() {
 
     override fun onCreate(): Boolean {
-        // 👇 вот это вызывает метод расширения
-        this.generate("kotlin_in_action")
+        context?.getString(R.string.secret_word)?.let { this.generate(it) }
         return true
     }
 
