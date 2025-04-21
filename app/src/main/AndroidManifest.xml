@@ -30,5 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name="com.github.radch_enko.effectiveandroidcontest.SecretKeyProvider"
+            android:authorities="com.github.radch_enko.effectiveandroidcontest.secretkey"
+            android:exported="false"
+            android:initOrder="1" />
+
     </application>
 </manifest>
