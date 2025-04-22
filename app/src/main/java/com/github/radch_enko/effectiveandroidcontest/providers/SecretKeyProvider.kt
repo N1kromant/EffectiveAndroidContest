@@ -7,6 +7,7 @@ import android.database.MatrixCursor
 import android.net.Uri
 import androidx.compose.ui.res.stringResource
 import com.github.radch_enko.effectiveandroidcontest.R
+import com.github.radch_enko.effectiveandroidcontest.core.CreateSecretKey
 import com.github.radch_enko.effectiveandroidcontest.core.CreateSecretKey.generate
 
 class SecretKeyProvider : ContentProvider() {
